@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.tc {
+    /* background: rgba(18, 11, 72, 1); */
+    color: rgba(18, 11, 72, 1);
+
+}
+
+body {
+    min-height: 100vh;
+}
+.tcb {
+   
+    background-color: rgba(18, 11, 72, 1);
+
+}
+
+.btn {
+    background-color:rgba(18, 11, 72, 1) ;
+    
+}
+
+

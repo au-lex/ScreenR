@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Screen Recorder",
+  "version": "1.0.1",
+  "description": "An extension to record screens",
+  "permissions": ["activeTab", "tabCapture", "storage"],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "icons": {
+    "16": "icon16.png"
+    
+  }
+}
