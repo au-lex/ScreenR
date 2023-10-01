@@ -47,7 +47,8 @@ function ScreenRecorder() {
     
                 // Upload to the provided endpoint
                 const formData = new FormData();
-                formData.append('video', blob);
+                formData.append('video', blob, 'recording.webm');
+
     
                 try {
                     const response = await fetch('https://video-api.up.railway.app/api/upload', {
