@@ -9,6 +9,11 @@
 }
 
 body {
+  
+    font-family: 'Sora', sans-serif;
+    @apply bg-slate-100;
+    
+    
     min-height: 100vh;
 }
 .tcb {
@@ -22,4 +27,11 @@ body {
     
 }
 
+.t {
+    top: .5rem;
+}
+
+.t2 {
+    top: 3rem;
+}
 
