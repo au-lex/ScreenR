@@ -47,7 +47,7 @@ function ScreenRecorder() {
     
                 // Upload to the provided endpoint
                 const formData = new FormData();
-                formData.append('video', blob, 'recording.webm');
+                formData.append('file', blob, 'recording.webm');
 
     
                 try {
