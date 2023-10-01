@@ -1,5 +1,9 @@
 import React, { useState, useRef } from 'react';
 import RecordRTC from 'recordrtc';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 function ScreenRecorder() {
     const [recording, setRecording] = useState(false);
@@ -36,11 +40,34 @@ function ScreenRecorder() {
 
     const stopRecording = () => {
         if (recordRTC) {
-            recordRTC.stopRecording(() => {
+            recordRTC.stopRecording(async () => {
                 const blob = recordRTC.getBlob();
                 const url = URL.createObjectURL(blob);
                 setVideoURL(url);
+    
+                // Upload to the provided endpoint
+                const formData = new FormData();
+                formData.append('video', blob);
+    
+                try {
+                    const response = await fetch('https://video-api.up.railway.app/api/upload', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    
+                    if (response.ok) {
+                        console.log("Video uploaded successfully.");
+                        toast.success("Video uploaded successfully!");  // Success toast notification
+                    } else {
+                        console.error("Failed to upload video:", await response.text());
+                        toast.error("Failed to upload video.");  // Error toast notification
+                    }
+                } catch (error) {
+                    console.error("Error uploading video:", error);
+                    toast.error("Error uploading video.");  // Error toast notification
+                }
             });
+    
             setRecording(false);
             clearInterval(timerInterval);
             setTimerInterval(null);
