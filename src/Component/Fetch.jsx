@@ -26,10 +26,10 @@ console.log(videos, "my videos");
 
     <div className="flex flex-col items-center justify-center min-h-[500px] w-screen mr-[10rem] bg-gray-100 space-y-6">
         
-        {videos.map((video, index) => (
+        {/* {videos.map((video, index) => (
             <video key={index} src={"BlobRecords/sample1.mp4"} controls className="w-full mt-4 border-4
              border-blue-500 rounded-md shadow-md"></video>
-        ))}
+        ))} */}
     </div>
 
 
